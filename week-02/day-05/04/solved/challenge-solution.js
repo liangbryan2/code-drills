@@ -10,7 +10,7 @@ word = word + "hello";
 word = word + " ";
 
 // append the string "world" to `word`
-word = word + "word";
+word = word + "world";
 
 // console.log the `word` variable
 console.log(word);
@@ -18,9 +18,9 @@ console.log(word);
 
 console.log("==================== Question 02 ====================");
 
-// iterate through the `word` variable and console.log each character inside of it
+// iterate through the `word` variable and console log each character inside of it
 for (var i = 0; i < word.length; i++) {
-    console.log(word[i]);
+  console.log(word[i]);
 }
 
 
@@ -40,21 +40,17 @@ animal = "the giraffe says sup";
 
 // using `indexOf`, console log `true` if the string "says" is in the `animal` 
 // variable and `false` if it's not
-if (animal.indexOf("says") >= 0) {
-    console.log(true);
+if (animal.indexOf('giraffe') >= 0){ 
+	console.log(true); 
+} else { 
+	console.log(false); 
 }
-else {
-    console.log(false);
-}
+
 
 // using `indexOf`, console.log `true` if the string "zebra" is in the `animal` 
 // variable and `false` if it's not.
-if (animal.indexOf("zebra") >= 0) {
-    console.log(true);
-}
-else {
-    console.log(false);
-}
+console.log(animal.indexOf("zebra") >= 0)
+
 
 
 console.log("==================== Question 05 ====================");
@@ -70,6 +66,9 @@ var word = "fiesta";
 // console log the "e" in `word` without explicitly using the string "e"
 console.log(word[2]);
 
+//another way 
+console.log(word.charAt(2));
+
 
 console.log("==================== Question 07 ====================");
 
@@ -77,7 +76,9 @@ var greeting = "apple banana chicken";
 greeting = greeting.replace(/a/g, 'g');
 
 // what is the value of the variable greeting?
-// "gpple bgngng chicken"
+// gpple bgngng chicken
+console.log(greeting);
+
 
 
 console.log("==================== Question 08 ====================");
@@ -85,19 +86,28 @@ console.log("==================== Question 08 ====================");
 word = "apple";
 
 // console.log "ppl" from `word` without using the letters "ppl"
-console.log(word.substring(1,4));
-// HINT: You are looking for a slice of this string, not the whole pie
-console.log(word.slice(1,4));
+console.log(word.slice(1,4))
+
+// another way 
+console.log(word[1] + word[2] + word[3]); 
+
+// another way 
+console.log(word.substr(1,3));
 
 
 console.log("==================== Question 09 ====================");
 
 word = "the giraffe said hi";
 
-// Capitalize the first letter in the `word` variable 
+// Capitalize the first letter in the `word` variable
 // console log your modified `word` variable
-word = word[0].toUpperCase() + word.slice(1);
-console.log(word);
+
+console.log(word.replace('t', 'T'));
+
+// another way
+console.log(word[0].toUpperCase() + word.slice(1));
+
+
 
 
 console.log("==================== Question 10 ====================");
@@ -105,23 +115,30 @@ console.log("==================== Question 10 ====================");
 animal = "moose"; 
 
 //write code here to change the center o to z
-animal = animal.replace("oo", "oz");
+//this is wrong animal[2] = 'z'; 
+
+//one way 
+animal = animal.slice(0, 2) + 'z' + animal.slice(3); 
 console.log(animal);
+
+//another way 
+animal = "moose"; 
+console.log(animal.replace('oo', 'oz'));
 
 
 console.log("==================== Question 11 ====================");
 
 // make a variable named `dogs` and initialize it to an empty array
-var dogs = [];
+var dogs = []; 
 
 // append the string "rover" into the `dogs` array
-dogs.push("rover");
+dogs.push('rover'); 
 
 // append the string "hunter" into the `dogs` array
-dogs.push("hunter");
+dogs.push('hunter'); 
 
 // append the string "oak" into the `dogs` array
-dogs.push("oak");
+dogs.push('oak'); 
 
 // console.log out the length of the `dogs` array
 console.log(dogs.length);
@@ -132,10 +149,19 @@ console.log("==================== Question 12 ====================");
 var letters = ['h', 'c', 'i', 'r'];
 
 // reverse the order of the `letters` array
-reverse = letters.reverse();
+lettersReversed = letters.reverse(); 
 
 // convert the `letters` array into a string and console log it
-console.log(reverse.join(""));
+console.log(lettersReversed.join(""));
+
+//another way 
+var letters = ['h', 'c', 'i', 'r'];
+var lettersReversed = []; 
+for (var i=letters.length-1; i>=0; i--){
+  lettersReversed.push(letters[i]); 
+} 
+lettersReversed = lettersReversed.join("");
+console.log(lettersReversed);
 
 
 console.log("==================== Question 13 ====================");
@@ -144,28 +170,43 @@ var famousToms = ["Tom Cruise", "Tom Hanks", "Tom Keel"];
 
 // write code below to replace "Tom Hanks" with "Tom Petty" 
 // in the `famousToms` variable
-famousToms[0] = "Tom Petty";
-console.log(famousToms);
+famousToms[1] = "Tom Petty";
+
 // declare a variable named `nums` and set it to an empty array
 var nums = [];
 
 // on the next line write code to add numbers 1 to 1000 into the nums array
-for (var i = 1; i < 1000; i++) {
-    nums.push(i);
+for (var i=1; i<=1000; i++){ 
+  nums.push(i); 
 }
-// console.log(nums);
+
 
 console.log("==================== Question 14 ====================");
 
 // write a function named `doubleLength` that takes in a string and returns
 // the length of that string multiplied by 2
-function doubleLength(str) {
-    return str.length * 2;
+function doubleLength(str){ 
+  return str.length*2; 
 }
 
 // call the `doubleLength` function with a value of "allen" and console log 
 // the return value
-console.log(doubleLength("allen"));
+console.log(doubleLength('allen'));
+
+//another way 
+function doubleLength2(str){ 
+  var len = str.length; 
+  return len * 2;
+} 
+console.log(doubleLength2('allen')); 
+
+//another way 
+function doubleLength3(str){ 
+  var doub = str.length * 2; 
+  return doub; 
+} 
+var a = doubleLength3('allen'); 
+console.log(a);
 
 console.log("==================== Question 15 ====================");
 
@@ -173,48 +214,60 @@ console.log("==================== Question 15 ====================");
 // numbers 1002 and 1001 in it.
 var nums = [1002, 1001];
 
-// on the next line write code to push the number from 1000 down to 1 
+// on the next line write code to push the numbers from 1000 down to 1 
 // into the nums array. The final array should have the numbers from 1002
 // to 1 in descending order
-for (var i = 1000; i >= 1; i--) {
-    nums.push(i);
+for (var i=1000; i>=1; i--){
+  nums.push(i); 
 }
-// console.log(nums);
+
+console.log(nums);
+
 
 console.log("==================== Question 16 ====================");
 
 // write a function named arrayMerge that takes in an array as an argument
 // and returns a string of all the elements combined
-function arrayMerge(arr) {
-    return arr.join("");
+
+function arrayMerge(arr){ 
+  return arr.join(""); 
 }
 
+// another way
+function arrayMerge2(arr) {
+  var combinedStr = "";
+  for (var i = 0; i < arr.length; i++) {
+    combinedStr += arr[i];
+  }
+  return combinedStr;
+}
 
 
 var myArray = [3,65,"hello",2,7,true,23,"yes"];
 
 // Test your function with `myArray` as the argument
-console.log(arrayMerge(myArray));
+console.log(arrayMerge(myArray))
+console.log(arrayMerge2(myArray))
 
 
 console.log("==================== Question 17 ====================");
 
 // write a function named `arrSum` that takes in an array and returns 
 // the sum of all the elements of the array
-function arrSum(arr) {
-    var sum = 0;
-    arr.forEach(function(elem, index) {
-        sum += elem;
-    });
-    return sum;
+function arrSum(arr){ 
+	var sum = 0; 
+	for (var i=0; i<arr.length; i++){ 
+		sum = sum + arr[i]; 
+	}
+return sum; 
 }
-
 
 
 myArray = [3,65,24,12,7,81,23,39];
 
 // Test your function with `myArray` as the argument
-console.log(arrSum(myArray));
+// you should get 254
+console.log(arrSum(myArray))
 
 
 console.log("==================== Question 18 ====================");
@@ -224,10 +277,10 @@ console.log("==================== Question 18 ====================");
 // waterBottle is true 
 // whereLunchToday is "Tyler's house"
 var tyler = {
-    name: "Tyler",
-    waterBottle: true,
-    whereLunchToday: "Tyler's house"
-};
+  name: "Tyler",
+  waterBottle: true,
+  whereLunchToday: "Tyler's house"
+}
 
 // add a key of "is a bro" to the `tyler` object and set it to true
 tyler["is a bro"] = true;
@@ -240,8 +293,8 @@ tyler.waterBottle = false;
 
 // then after making the `tyler` object, loop over the object and 
 // create an alert with the key and the value seperated by a space
-for (var key in tyler) {
-    alert(key + " " + tyler[key]);
+for (var property in tyler) {
+  alert(property + " " + tyler[property])
 }
 
 
@@ -250,48 +303,62 @@ console.log("==================== Question 19 ====================");
 var a = 5; 
 var b = 6;
 
-function returnSum1(a,b){ return a + b; }
+function returnSum1(a,b){ 
+  return a + b; 
+}
 
 var part1 = returnSum1();
 
 // What is the value of `part1`?
-// NaN
-console.log(part1);
+// part1 === NaN
+// `returnSum1` was called without any arguments
+console.log(part1)
 
 
 var a = 5; 
 var b = 6;
 
-function returnSum2(){ var a = 9; return a + b; }
+function returnSum2(){ 
+  var a = 9; 
+  return a + b; 
+}
 
 var part2 = returnSum2();
 
 // What is the value of `part2`?
-// 15
+// part2 === 15
 console.log(part2);
 
 
 var a = 5; 
 var b = 6;
 
-function returnSum3(){ return a + b; var a = 9; }
+function returnSum3(){ 
+  return a + b; 
+  var a = 9; 
+}
 
 var part3 = returnSum3();
 
 // What is the value of `part3`?
-// NaN
-console.log(part3);
+// part3 === NaN
+// `a` is hoisted, but the value isn't assigned until after the return statement
+// so the return statement is trying to return undefined + 6 which is NaN
+console.log("part3 ", part3);
 
 
 var a = 5; 
 var b = 6;
 
-function returnSum4(){ var a = "hi"; return a + b; }
+function returnSum4(){ 
+  var a = "hi"; 
+  return a + b; 
+}
 
 var part4 = returnSum4();
 
 // What is the value of `part4`?
-// hi6
+// part4 === "hi6"
 console.log(part4);
 
 
@@ -299,5 +366,5 @@ var num = 0;
 for (var i=9; i>=0; i--){ num += i; }
 
 // What is the value of `num`?
-// 45
+// num === 45
 console.log(num);
