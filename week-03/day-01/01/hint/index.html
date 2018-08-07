@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Day 01</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link Bootstrap so we can use their nice looking forms and buttons! -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Activity 01</h1>
+    <!-- Create a display area to display the user data -->
+    <div id="display">
+    </div>
+  </div>
+  <div class="container">
+    <form id="form">
+      <!-- Create a form with individual fields for the user's First Name, Last Name, Occupation, City, and State -->
+      <!-- Remember to give each of the input areas a unique id so we can easily pull the values off the forms -->
+      <div class="form-group">
+        <label for="formFN">First Name</label>
+        <input type="text" class="form-control" id="formFN" placeholder="John">
+      </div>
+
+      <div class="form-group">
+        <label for="formLN">Last Name</label>
+        <input type="text" class="form-control" id="formLN" placeholder="Smith">
+      </div>
+
+      <div class="form-group">
+        <label for="occupation">Occupation</label>
+        <input type="text" class="form-control" id="occupation" placeholder="Web Developer">
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="San Francisco">
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" placeholder="California">
+      </div>
+
+      <input type="submit" id="submit" class="btn btn-primary" value="Submit">
+
+    </form>
+  </div>
+  <!-- Link jQuery so we can interact with the DOM easily -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <!-- Link our javascript file -->
+  <script src="challenge-prompt.js"></script>
+
+</body>
+
+</html>
