@@ -59,29 +59,29 @@ console.log(target2)
 console.log("==================== Question 03 ====================");
 // Your target is: 42
 var nestedNumberArray = [3,1,[41,59,265,358,979],32,38,46,[264338,327,9,50,[2,88,42,971],69,3,9,937],510,58,2];
-var target;
+var target3;
 // assign `target` the value of 42 using the `nestedNumberArray` variable
 // 
-
+target3 = nestedNumberArray[6][4][2];
 
 
 
 // This should console log out 42
-console.log(target);
+console.log(target3);
 
 // ------------------------------------------------------------------
 console.log("==================== Question 04 ====================");
 // Your target is is: "Legos"
 var nestedMixedArray = [8,[76,["Bubble Solution"],530,"Slinky","Magic 8 Ball","Legos"],9];
-var target;
+var target4;
 // assign `target` the value of "Legos" using the `nestedMixedArray` variable
 // 
-
+target4 = nestedMixedArray[1][5];
 
 
 
 // This should console log out "Legos"
-console.log(target);
+console.log(target4);
 
 // ------------------------------------------------------------------
 console.log("==================== Question 05 ====================");
@@ -92,30 +92,30 @@ console.log("==================== Question 05 ====================");
 
 // Your desired target is: "Value!"
 var nestedObject = {"outer": {"innerKey": {"object": {"key": "Value!"}}}}
-var target;
+var target5;
 // assign `target` the value of "Value!" using the `nestedObject` variable
 // 
 
-
+target5 = nestedObject.outer.innerKey.object.key;
 
 
 // This should console log out "Value!"
-console.log(target);
+console.log(target5);
 
 // ------------------------------------------------------------------
 console.log("==================== Question 06 ====================");
 // Nested Mixed DataType Access
 // Your target is: "goal"
 var nestedMixedDataTypes = {"array": ["array", {"object": "goal"}]}
-var target;
+var target6;
 // assign `target` the value of "goal" using the `nestedMixedDataTypes` variable
 // 
-
+target6 = nestedMixedDataTypes.array[1].object;
 
 
 
 // This should console log out "goal"
-console.log(target);
+console.log(target6);
 
 // ------------------------------------------------------------------
 console.log("==================== Question 07 ====================");
@@ -221,7 +221,11 @@ var toyArrayOfObjects = [
 
 function iterateArrObjects(arrOfObj){
   // ---------- Your Code Here ----------
-
+  for (var i = 0; i < toyArrayOfObjects.length; i++) {
+    console.log("Count: " + toyArrayOfObjects[i].Product);
+    console.log("Item: " + toyArrayOfObjects[i].item);
+    console.log("*************************")
+  }
 
 
 
@@ -253,9 +257,11 @@ console.log("==================== Question 08  ====================");
 
 function iterateArrObjectsReverse(arrOfObj){
   // ---------- Your Code Here ----------
-
-
-
+  for (var i = toyArrayOfObjects.length - 1; i >= 0 ; i--) {
+    console.log("Count: " + toyArrayOfObjects[i].Product);
+    console.log("Item: " + toyArrayOfObjects[i].item);
+    console.log("*************************")
+  }
   
 
 
