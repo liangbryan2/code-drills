@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+    function compressor(str) {
+    // ====================== YOUR WORK HERE ===================
+      var letters = str.split("");
+      var object = {};
+      for (var i = 0; i < letters.length; i++) {
+        if (object[letters[i]]) {
+          object[letters[i]] = object[letters[i]] + 1;
+        }
+        else {
+          object[letters[i]] = 1;
+        }
+      }
+
+      console.log(Object.entries(object).join("").replace(/,/g, ""));
+
+
+    // =========================================================
+    }
+    console.log(compressor("hhhkkkkkkttttttttt"))
+    console.log(compressor("hrkjqehvewqjhvheqvwjcgfwegiuf"))
+  </script>
+  
+</body>
+</html>

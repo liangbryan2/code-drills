@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    var roman = "MMMDCCLXXXII"
+    var roman2 = "IX"
+    var roman3 = "CMXLIV"
+
+    function convertRoman(str) {
+
+      // ====================== YOUR WORK HERE ======================
+      var sum = 0;
+      while (str) {
+        if (str.includes('IV')) {
+          sum += 4;
+          str = str.replace(/IV/, '');
+        }
+        if (str.includes('IX')) {
+          sum += 9;
+          str = str.replace(/IX/, '');
+        }
+        if (str.includes('XL')) {
+          sum += 40;
+          str = str.replace(/XL/, '');
+        }
+        if (str.includes('XC')) {
+          sum += 90
+          str = str.replace(/XC/, '');
+        }
+        if (str.includes('CD')) {
+          sum += 400;
+          str = str.replace(/CD/, '');
+        }
+        if (str.includes('CM')) {
+          sum += 900;
+          str = str.replace(/CM/, '');
+        }
+        if (str.includes('M')) {
+          sum += 1000;
+          str = str.replace(/M/, '');
+        }
+        if (str.includes('D')) {
+          sum += 500;
+          str = str.replace(/D/, '');
+        }
+        if (str.includes('C')) {
+          sum += 100;
+          str = str.replace(/C/, '');
+        }
+        if (str.includes('L')) {
+          sum += 50;
+          str = str.replace(/L/, '');
+        }
+        if (str.includes('X')) {
+          sum += 10;
+          str = str.replace(/X/, '');
+        }
+        if (str.includes('V')) {
+          sum += 5;
+          str = str.replace(/V/, '');
+        }
+        if (str.includes('I')) {
+          sum += 1;
+          str = str.replace(/I/, '');
+        }
+          // ============================================================
+        }
+        return sum;
+      }
+
+
+
+      console.log(convertRoman(roman))
+      console.log(convertRoman(roman2))
+      console.log(convertRoman(roman3))
+  </script>
+</body>
+
+</html>
