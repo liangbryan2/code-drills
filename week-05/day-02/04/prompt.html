@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    var movements = "UUURDLURLDDRDLLLLRRUUDDDRLRU"
+
+
+    function backToSquareOne(moves) {
+// ===================== YOUR WORK HERE =====================
+var valid = 'UDLR';
+var updown = 0;
+var leftright = 0;
+for (var i = 0; i < moves.length; i++) {
+  if (!valid.includes(moves[i])) {
+    console.log('invalid moves detected at index ' + i);
+    return;
+  }
+  if (moves[i] === 'U') {
+    updown++;
+  }
+  if (moves[i] === 'D') {
+    updown--;
+  }
+  if (moves[i] === 'L') {
+    leftright--;
+  }
+  if (moves[i] === 'R') {
+    leftright++;
+  }
+}
+console.log([updown, leftright]);
+return updown === 0 && leftright === 0;
+// ==========================================================
+
+    }
+  //Returns true
+    console.log(backToSquareOne(movements))
+  </script>
+</body>
+</html>

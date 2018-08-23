@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+    var sourPatch = "abcd"
+
+    var candy = "ogcbwbkdafjdcjddd"
+
+
+
+    function numSourPatch(s, c) {
+      var count = 0;
+      // ===================== YOUR WORK HERE =====================
+      for (var i = 0; i < c.length; i++) {
+        if (s.includes(c[i])) {
+          count++;
+        }
+      }
+      return count;
+
+
+      // ==========================================================
+
+    }
+
+    //Should return 10
+    console.log(numSourPatch(sourPatch, candy))
+  </script>
+</body>
+
+</html>

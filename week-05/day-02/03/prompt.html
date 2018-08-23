@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+    var sent1 = "Sasha is very nice";
+    var sent2 = "Robert is very kind";
+
+    function uncommon(s1, s2) {
+      // ===================== YOUR WORK HERE =====================
+      var string = s1 + " " + s2;
+      var words = string.split(' ');
+      var object = {};
+      for (var i = 0; i < words.length; i++) {
+        if (object[words[i]]) {
+          object[words[i]] = object[words[i]] + 1;
+        } else {
+          object[words[i]] = 1;
+        }
+      }
+      var array = [];
+      for (var key in object) {
+        if (object[key] === 1) {
+          array.push(key);
+        }
+      }
+      return array;
+      // ==========================================================
+    }
+
+    // Should return: ["Sasha", "nice", "Robert", "kind"]
+    console.log(uncommon(sent1, sent2))
+  </script>
+</body>
+
+</html>
