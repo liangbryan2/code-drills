@@ -1,0 +1,15 @@
+{
+  "name": "04",
+  "version": "1.0.0",
+  "description": "* Set up a server using Express.js\r     * Remember to initialize npm and install Express!\r     * Remember to set the server to listen to the PORT you specified!\r     * Set up a `get` route that reads a parameter from the request route and calls on a `evenLetters` function with that string\r     * Send the return of the `evenLetters` function as a json response.",
+  "main": "challenge-prompt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
