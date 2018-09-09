@@ -14,7 +14,13 @@ var mysql = require("mysql")
 
 // Define the connection parameters to the sql server
 // -------------------- Your Code Here --------------------
-
+var connection = mysql.createConnection({
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'password',
+  database: 'restaurantsDB'
+})
 
 
 
@@ -25,7 +31,9 @@ var mysql = require("mysql")
 // Connect to the server we just defined
 // -------------------- Your Code Here --------------------
 
-
+connection.connect(function(err) {
+  if (err) throw err;
+})
 
 
 // --------------------- End Code Area --------------------
@@ -61,7 +69,11 @@ app.get("/add", function (req, res) {
 
 //Get all restaurants
 // -------------------- Your Code Here --------------------
-
+app.get("/api/restaurants", function (req, res) {
+  connection.query("SELECT * FROM restaurants", function (err, response) {
+    return res.json(response);
+  })
+})
 
 
 
@@ -69,7 +81,10 @@ app.get("/add", function (req, res) {
 
 //Create new restaurant
 // -------------------- Your Code Here --------------------
-
+app.post("/api/restaurants/new", function (req, res) {
+  var restaurant = req.body;
+  connection.query("INSERT INTO restaurants SET ?", restaurant);
+})
 
 
 
@@ -77,7 +92,15 @@ app.get("/add", function (req, res) {
 
 //Update restaurant rating
 // -------------------- Your Code Here --------------------
-
+app.put("/api/restaurants/:id/rating/:value", function (req, res) {
+  connection.query("UPDATE restaurants SET ? WHERE ?", 
+  {
+    rating: req.params.value
+  },
+  {
+    id: req.params.id
+  });
+})
 
 
 

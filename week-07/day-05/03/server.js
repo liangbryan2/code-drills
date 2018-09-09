@@ -66,6 +66,7 @@ app.use(express.static(__dirname + "/public"));
   //Create new restaurant
   app.post("/api/restaurants/new", function(req, res) {
     var restaurant = req.body
+    console.log(restaurant);
     connection.query("INSERT INTO restaurants SET ?", restaurant)
   })
 
